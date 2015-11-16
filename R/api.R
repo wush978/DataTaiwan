@@ -1,0 +1,39 @@
+get_source <- function(src) {
+  switch(tolower(src),
+         "taiwan" = "tw",
+         "taipei" = "tp",
+         src)
+}
+
+#'@title Search a Dataset
+#'@param keyword string. The keyword to search.
+#'@param src string. The name of the source platform. Possible values are one of:
+#'  \code{c("Taiwan", "Taipei")} or the abbreviation: \code{c("tw", "tp")}.
+#'@param ... Additional arguments which will be passed to the specified source platform.
+#'@export
+search_dataset <- function(keyword, src = "Taiwan", ...) {
+  src_abb <- get_source(src[1])
+  get(sprintf("search_dataset_%s", src_abb))(keyword, ...)
+}
+
+#'@title List the Data in the Dataset
+#'@param id string. The id of the dataset.
+#'@param src string. The name of the source platform. Possible values are one of:
+#'  \code{c("Taiwan", "Taipei")} or the abbreviation: \code{c("tw", "tp")}.
+#'@param ... Additional arguments which will be passed to the specified source platform.
+#'@export
+list_dataset <- function(id, src, ...) {
+  src_abb <- get_source(src[1])
+  get(sprintf("list_dataset_%s", src_abb))(id, ...)
+}
+
+#'@title Download the Data from the Source Platform.
+#'@param rid string. The id of the data.
+#'@param src string. The name of the source platform. Possible values are one of:
+#'  \code{c("Taiwan", "Taipei")} or the abbreviation: \code{c("tw", "tp")}.
+#'@param ... Additional arguments which will be passed to the specified source platform.
+#'@export
+download_data <- function(rid, src, format = "table", ...) {
+  src_abb <- get_source(src[1])
+  get(sprintf("download_data_%s", src_abb))(rid, format, ...)
+}
