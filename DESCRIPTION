@@ -1,0 +1,10 @@
+Package: DataTaiwan
+Type: Package
+Title: Searching and Retrieving Data from All Open Data Provided By Taiwan Government.
+Version: 0.1
+Date: 2015-11-16
+Author: Wush Wu
+Maintainer: Wush Wu <wush978@gmail.com>
+Description: As Title.
+License: GPL(>= 3)
+LazyData: TRUE
