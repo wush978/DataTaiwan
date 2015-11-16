@@ -9,12 +9,20 @@ download_data(rid, src, format = "table", ...)
 \arguments{
 \item{rid}{string. The id of the data.}
 
-\item{src}{string. The name of the source platform. Possible values are one of:
+\item{src}{string. The name of the source platform. Possible values are:
 \code{c("Taiwan", "Taipei")} or the abbreviation: \code{c("tw", "tp")}.}
+
+\item{format}{string. The format of returned object. Possible values are:
+\code{c("table", "json", "xml")}.}
 
 \item{...}{Additional arguments which will be passed to the specified source platform.}
 }
 \description{
 Download the Data from the Source Platform.
+}
+\examples{
+\dontrun{
+ download_data("55ec6d6e-dc5c-4268-a725-d04cc262172b", "Taipei", format = "table", encoding = "BIG-5", header = TRUE)
+}
 }
 

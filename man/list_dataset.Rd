@@ -17,4 +17,9 @@ list_dataset(id, src, ...)
 \description{
 List the Data in the Dataset
 }
+\examples{
+\dontrun{
+ list_dataset("8ef1626a-892a-4218-8344-f7ac46e1aa48", "Taipei")
+}
+}
 
