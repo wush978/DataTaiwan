@@ -34,12 +34,12 @@ list_dataset_tp <- function(id, ...) {
 download_data_tp <- function(rid, format, ...) {
   query <- list(scope = "resourceAquire", rid = to_utf8(rid), format = tp_format(format), ...)
   response <- tp_get(query, ...)
-  switch(tp_format(format),
-         "csv" = {
+  switch(format,
+         "table" = {
            read.table(textConnection(response), sep = ",", ...)
          },
-         "xml" = {
-           stop("TODO")
-         },
-         "json" = response)
+         "xml" = response,
+         "json" = response,
+         "raw" = stop("TODO"),
+         stop("Not supported"))
 }
