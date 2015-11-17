@@ -13,6 +13,9 @@ get_source <- function(src) {
 #'@export
 #'@examples
 #'\dontrun{
+#'
+#'  search_dataset("power", src = "Taiwan")
+#'
 #'  search_dataset("youbike", src = "Taipei", limit = 5, offset = 0)
 #'}
 search_dataset <- function(keyword, src = "Taiwan", ...) {
@@ -28,6 +31,8 @@ search_dataset <- function(keyword, src = "Taiwan", ...) {
 #'@export
 #'@examples
 #'\dontrun{
+#'  list_dataset(19813, "Taiwan")
+#'
 #'  list_dataset("8ef1626a-892a-4218-8344-f7ac46e1aa48", "Taipei")
 #'}
 list_dataset <- function(id, src, ...) {
@@ -40,7 +45,7 @@ list_dataset <- function(id, src, ...) {
 #'@param src string. The name of the source platform. Possible values are:
 #'  \code{c("Taiwan", "Taipei")} or the abbreviation: \code{c("tw", "tp")}.
 #'@param format string. The format of returned object. Possible values are:
-#'  \code{c("table", "json", "xml")}.
+#'  \code{c("table", "json", "xml", "raw")}.
 #'@param ... Additional arguments which will be passed to the specified source platform.
 #'@export
 #'@examples
