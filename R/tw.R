@@ -58,5 +58,6 @@ download_data_tw <- function(rid, format) {
          "table" = stop("TODO"),
          "json" = stop("TODO"),
          "xml" = stop("TODO"),
-         "raw" = httr::content(response, as = "raw"))
+         "raw" = httr::content(response, as = "raw"),
+         stop("Not supported"))
 }
