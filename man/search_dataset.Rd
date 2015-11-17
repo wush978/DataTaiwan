@@ -17,4 +17,9 @@ search_dataset(keyword, src = "Taiwan", ...)
 \description{
 Search a Dataset
 }
+\examples{
+\dontrun{
+ search_dataset("youbike", src = "Taipei", limit = 5, offset = 0)
+}
+}
 
